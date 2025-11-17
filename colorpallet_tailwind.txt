@@ -1,0 +1,48 @@
+--color-yale-blue-50: #e9f5fc;
+--color-yale-blue-100: #d2ebf9;
+--color-yale-blue-200: #a5d8f3;
+--color-yale-blue-300: #78c4ed;
+--color-yale-blue-400: #4bb0e7;
+--color-yale-blue-500: #1f9de0;
+--color-yale-blue-600: #187db4;
+--color-yale-blue-700: #125e87;
+--color-yale-blue-800: #0c3f5a;
+--color-yale-blue-900: #061f2d;
+--color-yale-blue-950: #04161f;
+
+--color-platinum-50: #eef3f6;
+--color-platinum-100: #dde7ee;
+--color-platinum-200: #bbcfdd;
+--color-platinum-300: #99b8cc;
+--color-platinum-400: #77a0bb;
+--color-platinum-500: #5588aa;
+--color-platinum-600: #446d88;
+--color-platinum-700: #335266;
+--color-platinum-800: #223644;
+--color-platinum-900: #111b22;
+--color-platinum-950: #0c1318;
+
+--color-fresh-sky-50: #e8f6fc;
+--color-fresh-sky-100: #d1edfa;
+--color-fresh-sky-200: #a3dbf5;
+--color-fresh-sky-300: #75c9f0;
+--color-fresh-sky-400: #47b7eb;
+--color-fresh-sky-500: #19a5e6;
+--color-fresh-sky-600: #1484b8;
+--color-fresh-sky-700: #0f638a;
+--color-fresh-sky-800: #0a425c;
+--color-fresh-sky-900: #05212e;
+--color-fresh-sky-950: #041720;
+
+--color-prussian-blue-50: #edf1f8;
+--color-prussian-blue-100: #dae4f1;
+--color-prussian-blue-200: #b5c8e3;
+--color-prussian-blue-300: #90add5;
+--color-prussian-blue-400: #6b91c7;
+--color-prussian-blue-500: #4676b9;
+--color-prussian-blue-600: #385e94;
+--color-prussian-blue-700: #2a476f;
+--color-prussian-blue-800: #1c2f4a;
+--color-prussian-blue-900: #0e1825;
+--color-prussian-blue-950: #0a111a;
+

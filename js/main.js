@@ -14,7 +14,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Navigation active state management
 function initializeNavigation() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    // Get current route from hash or pathname
+    let currentRoute = window.location.hash.substring(1) || '/';
+    if (currentRoute === '/' && window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        // Try to get route from pathname
+        const pathname = window.location.pathname;
+        if (pathname.includes('/pages/')) {
+            const filename = pathname.split('/').pop();
+            currentRoute = '/' + filename.replace('.html', '');
+        } else if (pathname !== '/index.html' && pathname !== '/') {
+            currentRoute = '/' + pathname.split('/').pop().replace('.html', '');
+        }
+    }
+    
     const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
     
     navLinks.forEach(link => {
@@ -22,14 +34,39 @@ function initializeNavigation() {
         // Remove active class first
         link.classList.remove('active');
         
-        // Check if this link matches the current page
-        const linkFileName = linkHref.split('/').pop();
-        const isHomePage = (currentPage === '' || currentPage === 'index.html' || currentPage.endsWith('/'));
-        const isCurrentPage = linkFileName === currentPage || 
-                             (isHomePage && (linkHref === 'index.html' || linkHref === '../index.html' || linkHref.endsWith('/index.html'))) ||
-                             (linkFileName && currentPage.includes(linkFileName));
+        // Get route from link href
+        let linkRoute = null;
+        if (linkHref && linkHref.startsWith('#')) {
+            linkRoute = linkHref.substring(1) || '/';
+        } else if (linkHref) {
+            // Convert file path to route
+            if (linkHref === 'index.html' || linkHref === './index.html' || linkHref === '../index.html' || linkHref === '/') {
+                linkRoute = '/';
+            } else if (linkHref.includes('about')) {
+                linkRoute = '/about';
+            } else if (linkHref.includes('programmes')) {
+                linkRoute = '/programmes';
+            } else if (linkHref.includes('publications')) {
+                linkRoute = '/publications';
+            } else if (linkHref.includes('team')) {
+                linkRoute = '/team';
+            } else if (linkHref.includes('gallery')) {
+                linkRoute = '/gallery';
+            } else if (linkHref.includes('blog')) {
+                linkRoute = '/blog';
+            } else if (linkHref.includes('shop')) {
+                linkRoute = '/shop';
+            } else if (linkHref.includes('contact')) {
+                linkRoute = '/contact';
+            } else if (linkHref.includes('privacy-policy')) {
+                linkRoute = '/privacy-policy';
+            } else if (linkHref.includes('safeguard')) {
+                linkRoute = '/safeguard';
+            }
+        }
         
-        if (isCurrentPage) {
+        // Check if this link matches the current route
+        if (linkRoute && linkRoute === currentRoute) {
             link.classList.add('active');
         }
     });

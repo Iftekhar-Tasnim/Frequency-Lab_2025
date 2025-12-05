@@ -1,16 +1,62 @@
 // Main JavaScript file for F Lab website
 
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('F Lab website loaded');
-    
-    // Add any initialization code here
+// Page Loader functionality - REMOVED
+// All loader-related code has been commented out/removed
+// If you need to restore the loader, uncomment the functions below
+
+/*
+let loaderInitialized = false;
+let progressInterval = null;
+let loaderHideTimeout = null;
+let isInitialPageLoad = true;
+
+function hidePageLoader() {
+    // Loader removed
+}
+
+function ensureLoaderHidden() {
+    // Loader removed
+}
+
+function initializePageLoader() {
+    // Loader removed
+}
+
+function markInitialLoadComplete() {
+    // Loader removed
+}
+*/
+
+let isInitialPageLoad = true; // Keep for potential future use
+
+function markInitialLoadComplete() {
+    // Mark initial load complete (used for other features)
+    setTimeout(() => {
+        isInitialPageLoad = false;
+    }, 100);
+}
+
+// Initialize on DOM ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        // initializePageLoader(); // Loader removed
+        initializeNavigation();
+        initializeCarousel();
+        initializeMobileMenu();
+        initializeNavbarScroll();
+        initializeTestimonialsSlider();
+        markInitialLoadComplete();
+    });
+} else {
+    // DOM is already ready
+    // initializePageLoader(); // Loader removed
     initializeNavigation();
     initializeCarousel();
     initializeMobileMenu();
     initializeNavbarScroll();
     initializeTestimonialsSlider();
-});
+    markInitialLoadComplete();
+}
 
 // Navigation active state management
 function initializeNavigation() {
@@ -79,19 +125,36 @@ function initializeMobileMenu() {
     const menuIcon = document.getElementById('menu-icon');
     const closeIcon = document.getElementById('close-icon');
     
-    if (!mobileMenuBtn || !mobileMenu) return;
+    if (!mobileMenuBtn || !mobileMenu) {
+        console.warn('Mobile menu elements not found');
+        return;
+    }
     
-    mobileMenuBtn.addEventListener('click', function() {
-        const isHidden = mobileMenu.classList.contains('hidden');
+    // Remove any existing event listeners by cloning and replacing
+    const newBtn = mobileMenuBtn.cloneNode(true);
+    mobileMenuBtn.parentNode.replaceChild(newBtn, mobileMenuBtn);
+    
+    // Get fresh references after replacement
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+    const close = document.getElementById('close-icon');
+    
+    if (!btn || !menu) return;
+    
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isHidden = menu.classList.contains('hidden');
         
         if (isHidden) {
-            mobileMenu.classList.remove('hidden');
-            menuIcon.classList.add('hidden');
-            closeIcon.classList.remove('hidden');
+            menu.classList.remove('hidden');
+            if (icon) icon.classList.add('hidden');
+            if (close) close.classList.remove('hidden');
         } else {
-            mobileMenu.classList.add('hidden');
-            menuIcon.classList.remove('hidden');
-            closeIcon.classList.add('hidden');
+            menu.classList.add('hidden');
+            if (icon) icon.classList.remove('hidden');
+            if (close) close.classList.add('hidden');
         }
     });
     
@@ -99,9 +162,9 @@ function initializeMobileMenu() {
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     mobileNavLinks.forEach(link => {
         link.addEventListener('click', function() {
-            mobileMenu.classList.add('hidden');
-            menuIcon.classList.remove('hidden');
-            closeIcon.classList.add('hidden');
+            menu.classList.add('hidden');
+            if (icon) icon.classList.remove('hidden');
+            if (close) close.classList.add('hidden');
         });
     });
 }

@@ -1,0 +1,4 @@
+fonts -
+Headlines - https://fonts.google.com/specimen/Exo+2?query=exo+2
+
+Body text - https://fonts.google.com/specimen/Nunito

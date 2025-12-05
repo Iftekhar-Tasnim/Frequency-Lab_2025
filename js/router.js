@@ -160,13 +160,13 @@ class Router {
             route = '/';
         }
         
-        // Don't reload if it's the same route and we're already on the home page
+        // Don't reload if it's the same route (except when navigating to home from another page)
         if (this.currentRoute === route) {
-            // If we're on home route and already on index.html, don't reload
+            // If already on home and clicking home again, just reinitialize
             if (route === '/' && (window.location.pathname === '/' || window.location.pathname.endsWith('index.html'))) {
                 return;
             }
-            // For other routes, allow reload if hash changed
+            // For other routes, don't reload if same
             if (route !== '/') {
                 return;
             }
@@ -174,13 +174,14 @@ class Router {
         
         this.currentRoute = route;
         
-        // If we're on home route and already on index.html, just update hash and initialize
-        if (route === '/' && (window.location.pathname === '/' || window.location.pathname.endsWith('index.html'))) {
+        // If we're on home route and it's the initial load (no currentRoute set), just initialize
+        if (route === '/' && !this.currentRoute && (window.location.pathname === '/' || window.location.pathname.endsWith('index.html'))) {
             window.history.replaceState({ route: '/' }, '', window.location.pathname);
             this.reinitializePage();
             return;
         }
         
+        // Load the page (this handles both home and other routes)
         await this.loadPage(route);
     }
 
@@ -341,23 +342,23 @@ class Router {
     }
 
     showLoading() {
-        // Optional: Add a loading indicator
-        const loader = document.createElement('div');
-        loader.id = 'page-loader';
-        loader.className = 'fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex items-center justify-center';
-        loader.innerHTML = `
+        // Show a minimal loading overlay for route changes (not the main page loader)
+        const routeLoader = document.createElement('div');
+        routeLoader.id = 'route-loader';
+        routeLoader.className = 'fixed inset-0 bg-white/60 backdrop-blur-sm z-[100] flex items-center justify-center';
+        routeLoader.innerHTML = `
             <div class="text-center">
                 <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-yale-blue-500 border-t-transparent mb-4"></div>
-                <p class="text-prussian-blue-800 font-medium">Loading...</p>
+                <p class="text-prussian-blue-800 font-medium">Loading page...</p>
             </div>
         `;
-        document.body.appendChild(loader);
+        document.body.appendChild(routeLoader);
     }
 
     hideLoading() {
-        const loader = document.getElementById('page-loader');
-        if (loader) {
-            loader.remove();
+        const routeLoader = document.getElementById('route-loader');
+        if (routeLoader) {
+            routeLoader.remove();
         }
     }
 

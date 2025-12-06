@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Nunito', 'sans-serif'],
+        'headline': ['Exo 2', 'sans-serif'],
+        'body': ['Nunito', 'sans-serif'],
+      },
       colors: {
         'yale-blue': {
           50: '#e9f5fc',

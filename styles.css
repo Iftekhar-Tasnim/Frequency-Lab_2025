@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  /* Ensure all headings use Exo 2 */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Exo 2', sans-serif;
+  }
+  
+  /* Ensure body text elements use Nunito */
+  p, span:not(h1 span, h2 span, h3 span, h4 span, h5 span, h6 span), 
+  div:not(h1, h2, h3, h4, h5, h6), 
+  a, li, td, th, label, input, textarea, select, button {
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  /* Navigation and brand text can use Exo 2 for emphasis */
+  .font-headline {
+    font-family: 'Exo 2', sans-serif;
+  }
+}
+
 /* Hide scrollbar for carousel */
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
@@ -24,8 +47,10 @@
     transform: translateX(-50%) scaleX(0);
     width: 80%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #1f9de0, transparent);
+    background: linear-gradient(90deg, transparent, #4bb0e7, transparent);
+    box-shadow: 0 0 8px rgba(75, 176, 231, 0.5);
     transition: transform 0.3s ease;
+    z-index: 10;
 }
 
 .nav-link:hover .nav-indicator,
@@ -34,13 +59,29 @@
 }
 
 .nav-link.active {
-    color: #1f9de0;
+    color: #4bb0e7;
 }
 
-/* Navbar scroll effect */
-.navbar-scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+/* Mobile navigation active state */
+.mobile-nav-link.active {
+    color: #4bb0e7;
+    background-color: rgba(30, 58, 138, 0.3);
+}
+
+/* Navbar base and scroll effect - Glassmorphism */
+#navbar {
+    background: transparent;
+}
+
+#navbar .absolute {
+    background: linear-gradient(to bottom, rgba(14, 24, 37, 0.8), rgba(10, 17, 26, 0.8));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.navbar-scrolled .absolute {
+    background: linear-gradient(to bottom, rgba(14, 24, 37, 0.95), rgba(10, 17, 26, 0.95)) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 /* Mobile menu animation */

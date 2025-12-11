@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="/dist/output.css" rel="stylesheet">
     
     <!-- Typography Styles -->
@@ -16,7 +16,14 @@
         /* Set Inter as default font for body and all UI elements */
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.01em;
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
         }
         
         /* Apply Inter to paragraphs, lists, navigation, buttons, forms, footer */
@@ -26,26 +33,64 @@
         .text-platinum-600, .text-platinum-700 {
             font-family: 'Inter', sans-serif;
         }
+
+        /* Body text readability */
+        p {
+            max-width: 72ch;
+            margin-bottom: 1rem;
+        }
         
-        /* Apply Space Grotesk to all headings */
+        /* Apply Playfair Display to all headings */
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Heading scale and weights */
+        h1 {
+            font-size: clamp(40px, 4vw, 48px);
             font-weight: 700;
-            letter-spacing: -0.02em;
+        }
+        h2 {
+            font-size: clamp(32px, 3vw, 38px);
+            font-weight: 600;
+        }
+        h3 {
+            font-size: clamp(24px, 2.5vw, 28px);
+            font-weight: 600;
+        }
+        h4 {
+            font-size: clamp(20px, 2vw, 22px);
+            font-weight: 600;
+        }
+        h5 {
+            font-size: clamp(18px, 1.8vw, 20px);
+            font-weight: 500;
+        }
+        h6 {
+            font-size: clamp(16px, 1.6vw, 18px);
+            font-weight: 500;
+        }
+
+        /* Slight positive tracking only for uppercase Playfair */
+        h1.uppercase, h2.uppercase, h3.uppercase, h4.uppercase, h5.uppercase, h6.uppercase {
+            letter-spacing: 0.04em;
         }
         
         /* Hero section headings */
         .hero h1, section h1, section h2 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: 0;
         }
         
         /* Card titles and section headings */
         h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 600;
-            letter-spacing: -0.01em;
+            letter-spacing: 0;
         }
         
         /* Navigation links - Inter with uppercase option */
@@ -185,17 +230,17 @@
             <!-- Slide 1 -->
             <div id="slide1" class="carousel-item relative w-full h-full flex-shrink-0">
                 <div class="w-full h-full bg-gradient-to-br from-yale-blue-500 via-fresh-sky-500 to-platinum-500"></div>
-                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="absolute inset-0 bg-black/45"></div>
             </div>
             <!-- Slide 2 -->
             <div id="slide2" class="carousel-item relative w-full h-full flex-shrink-0">
                 <div class="w-full h-full bg-gradient-to-br from-prussian-blue-600 via-yale-blue-600 to-fresh-sky-600"></div>
-                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="absolute inset-0 bg-black/45"></div>
             </div>
             <!-- Slide 3 -->
             <div id="slide3" class="carousel-item relative w-full h-full flex-shrink-0">
                 <div class="w-full h-full bg-gradient-to-br from-platinum-400 via-yale-blue-400 to-fresh-sky-400"></div>
-                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="absolute inset-0 bg-black/45"></div>
             </div>
         </div>
         

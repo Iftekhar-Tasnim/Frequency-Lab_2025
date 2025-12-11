@@ -217,13 +217,17 @@ function initializeCarousel() {
     function updateCarouselNavigation() {
         // Update indicator buttons
         const indicators = document.querySelectorAll('.carousel-indicator');
+        if (!indicators.length) return;
+        
         indicators.forEach((indicator, index) => {
             if (index === currentSlide) {
-                indicator.classList.add('bg-white', 'bg-opacity-80');
-                indicator.classList.remove('bg-white', 'bg-opacity-50');
+                indicator.classList.add('bg-white', 'bg-opacity-80', 'ring-2', 'ring-white', 'ring-opacity-80', 'scale-110');
+                indicator.classList.remove('bg-opacity-50', 'ring-0', 'scale-100');
+                indicator.setAttribute('aria-current', 'true');
             } else {
-                indicator.classList.remove('bg-white', 'bg-opacity-80');
-                indicator.classList.add('bg-white', 'bg-opacity-50');
+                indicator.classList.remove('bg-opacity-80', 'ring-2', 'ring-white', 'ring-opacity-80', 'scale-110');
+                indicator.classList.add('bg-white', 'bg-opacity-50', 'ring-0', 'scale-100');
+                indicator.removeAttribute('aria-current');
             }
         });
     }

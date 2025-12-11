@@ -1,0 +1,74 @@
+Typography & UI/UX Review for Frequency Lab Website
+
+1. Site Summary
+   Frequency Lab is an EdTech and youth-focused technology learning platform. The website presents its mission, program offerings, partners, and contact information in a clear structure.
+
+2. Key Issues Identified
+
+* Typography inconsistency and lack of hierarchy.
+* Heading styles do not create enough visual distinction.
+* Possible contrast issues on backgrounds.
+* Potential font performance overhead if multiple families or many weights are used.
+
+3. Recommended Font System (Final Selection)
+   Primary Body Font: Inter
+
+* Weights: 400 (Regular), 500 (Medium), 700 (Bold)
+* Usage: Body text, paragraphs, captions, forms.
+
+Secondary Heading Font: Playfair Display
+
+* Weights: 500, 600, 700
+* Usage: H1–H6 headings, hero section titles, major headings.
+* Note: Playfair Display provides a premium, elegant, editorial-style contrast that elevates brand perception.
+
+Optional Display Font
+
+* Only if needed for logo or a special hero area. Do not use widely across the UI.
+
+4. Google Font Links
+   Inter: [https://fonts.google.com/specimen/Inter](https://fonts.google.com/specimen/Inter)
+   Playfair Display: [https://fonts.google.com/specimen/Playfair+Display](https://fonts.google.com/specimen/Playfair+Display)
+
+5. Typographic Rules
+
+* Base body font size: 16px (desktop), 15–16px (mobile).
+* Body line-height: 1.5.
+* Heading scale (desktop):
+  • H1: 40–48px, weight 700
+  • H2: 32–38px, weight 600
+  • H3: 24–28px, weight 500 or 600
+  • H4–H6: Scale down progressively
+* Letter spacing:
+  • Body: 0 to +0.02em
+  • Playfair headings: Slight positive letter-spacing only for uppercase; otherwise keep natural spacing.
+
+6. Hierarchy & Layout Improvements
+
+* Increase contrast between heading sizes for stronger structure.
+* Add consistent spacing above and below headings.
+* Keep line length within 50–75 characters for optimal readability.
+
+7. Color & Accessibility
+
+* Ensure text maintains WCAG AA contrast.
+* Avoid placing text directly over busy background images.
+* Test button and small text contrast across all devices.
+
+8. Font Performance Instructions
+
+* Load only the necessary weights listed above.
+* Ask developer to use font-display: swap to improve perceived performance.
+* Limit total font files to prevent layout shift.
+
+9. Developer Instructions (TXT Ready)
+
+* Use Inter for all body text (weights 400, 500, 700).
+* Use Playfair Display for all headings (weights 500, 600, 700).
+* Remove any other font families.
+* Establish base body size 16px and heading scale as defined.
+* Apply consistent spacing around headings.
+* Ensure contrast meets accessibility standards.
+* Enable font-display: swap and reduce font-file count.
+
+End of Report.

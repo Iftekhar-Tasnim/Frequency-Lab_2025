@@ -10,6 +10,7 @@ class Router {
             '/programmes': 'pages/programmes.html',
             '/publications': 'pages/publications.html',
             '/team': 'pages/team.html',
+            '/gallery': 'pages/gallery.html',
 
             '/blog': 'pages/blog.html',
             '/shop': 'pages/shop.html',
@@ -97,6 +98,10 @@ class Router {
             '../pages/team.html': '/team',
             './pages/team.html': '/team',
             'team.html': '/team',
+            'pages/gallery.html': '/gallery',
+            '../pages/gallery.html': '/gallery',
+            './pages/gallery.html': '/gallery',
+            'gallery.html': '/gallery',
 
             'pages/blog.html': '/blog',
             '../pages/blog.html': '/blog',
@@ -192,6 +197,7 @@ class Router {
             '/programmes.html': '/programmes',
             '/publications.html': '/publications',
             '/team.html': '/team',
+            '/gallery.html': '/gallery',
 
             '/blog.html': '/blog',
             '/shop.html': '/shop',
@@ -284,6 +290,12 @@ class Router {
             bodyContent = bodyContent.replace(/href="\.\/pages\/team\.html"/g, 'href="#/team"');
             bodyContent = bodyContent.replace(/href="pages\/team\.html"/g, 'href="#/team"');
             bodyContent = bodyContent.replace(/href="team\.html"/g, 'href="#/team"');
+
+            // Gallery page
+            bodyContent = bodyContent.replace(/href="\.\.\/pages\/gallery\.html"/g, 'href="#/gallery"');
+            bodyContent = bodyContent.replace(/href="\.\/pages\/gallery\.html"/g, 'href="#/gallery"');
+            bodyContent = bodyContent.replace(/href="pages\/gallery\.html"/g, 'href="#/gallery"');
+            bodyContent = bodyContent.replace(/href="gallery\.html"/g, 'href="#/gallery"');
 
 
 
@@ -395,6 +407,15 @@ class Router {
         }
         if (typeof initializeTestimonialsSlider === 'function') {
             initializeTestimonialsSlider();
+        }
+
+        // Initialize gallery lightbox if on gallery page
+        if (this.currentRoute === '/gallery') {
+            setTimeout(() => {
+                if (typeof window.initGallery === 'function') {
+                    window.initGallery();
+                }
+            }, 100);
         }
 
 

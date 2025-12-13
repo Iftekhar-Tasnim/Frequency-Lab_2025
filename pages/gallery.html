@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F Lab - Programmes</title>
+    <title>F Lab - Gallery</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,56 +12,14 @@
     
     <!-- Typography Styles -->
     <style>
-        /* Set Inter as default font for body and all UI elements */
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-        }
-        
-        /* Apply Inter to paragraphs, lists, navigation, buttons, forms, footer */
-        p, li, ul, ol, a, button, input, textarea, select, 
-        .nav-link, .mobile-nav-link, footer, 
-        .btn, .text-platinum-300, .text-platinum-400, 
-        .text-platinum-600, .text-platinum-700 {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        /* Apply Space Grotesk to all headings */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-        
-        /* Hero section headings */
-        .hero h1, section h1, section h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-        
-        /* Card titles and section headings */
-        h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-        }
-        
-        /* Navigation links - Inter with uppercase option */
-        .nav-link, .mobile-nav-link {
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 0.05em;
-        }
-        
-        /* Button text - Inter with stronger weight */
-        .btn {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-        }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+        .nav-link, .btn { font-family: 'Inter', sans-serif; }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation (Placeholder - injected by router/main.js logic or manual consistency) -->
+    <!-- We copy the navbar structure from other pages to ensure instant render -->
     <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
         <div class="absolute inset-0 bg-gradient-to-b from-prussian-blue-900 to-prussian-blue-950 backdrop-blur-xl bg-opacity-80 border-b border-white/10"></div>
         <div class="container mx-auto px-4 lg:px-8 relative">
@@ -100,16 +58,6 @@
                         Gallery
                         <span class="nav-indicator"></span>
                     </a>
-
-                    <!-- Blog and Shop links hidden - will be used later -->
-                    <!-- <a href="#/blog" class="nav-link px-4 py-2 text-sm font-medium text-platinum-100 hover:text-yale-blue-400 relative group transition-all duration-300 rounded-lg hover:bg-white/5">
-                        Blog
-                        <span class="nav-indicator"></span>
-                    </a>
-                    <a href="#/shop" class="nav-link px-4 py-2 text-sm font-medium text-platinum-100 hover:text-yale-blue-400 relative group transition-all duration-300 rounded-lg hover:bg-white/5">
-                        Shop
-                        <span class="nav-indicator"></span>
-                    </a> -->
                     <a href="#/contact" class="nav-link px-4 py-2 text-sm font-medium text-platinum-100 hover:text-yale-blue-400 relative group transition-all duration-300 rounded-lg hover:bg-white/5">
                         Contact Us
                         <span class="nav-indicator"></span>
@@ -155,14 +103,6 @@
                     <a href="#/gallery" class="mobile-nav-link block px-4 py-3 text-base font-medium text-platinum-100 hover:bg-white/10 hover:text-yale-blue-400 rounded-lg transition-all duration-300 border border-transparent hover:border-white/10">
                         Gallery
                     </a>
-
-                    <!-- Blog and Shop links hidden - will be used later -->
-                    <!-- <a href="#/blog" class="mobile-nav-link block px-4 py-3 text-base font-medium text-platinum-100 hover:bg-white/10 hover:text-yale-blue-400 rounded-lg transition-all duration-300 border border-transparent hover:border-white/10">
-                        Blog
-                    </a>
-                    <a href="#/shop" class="mobile-nav-link block px-4 py-3 text-base font-medium text-platinum-100 hover:bg-white/10 hover:text-yale-blue-400 rounded-lg transition-all duration-300 border border-transparent hover:border-white/10">
-                        Shop
-                    </a> -->
                     <a href="#/contact" class="mobile-nav-link block px-4 py-3 text-base font-medium text-platinum-100 hover:bg-white/10 hover:text-yale-blue-400 rounded-lg transition-all duration-300 border border-transparent hover:border-white/10">
                         Contact Us
                     </a>
@@ -175,124 +115,35 @@
             </div>
         </div>
     </nav>
-
-    <!-- Spacer for fixed navbar -->
     <div class="h-20"></div>
-<main class="container mx-auto px-4 py-8">
-        <div class="max-w-6xl mx-auto">
-            <h1 class="text-4xl font-bold mb-8 text-prussian-blue-800">Our Programmes</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Programme Card 1 -->
-                <div class="card bg-white shadow-xl border border-platinum-200">
-                    <div class="card-body">
-                        <h2 class="card-title text-prussian-blue-700">After-School Program</h2>
-                        <p class="text-platinum-700">
-                            Specialized technology learning sessions after regular school hours, packed with hands-on coding,
-                            electronics, and robotics experiences.
-                        </p>
-                        <ul class="text-sm text-platinum-600 space-y-1 mt-3">
-                            <li>• Daily 90-minute cohorts</li>
-                            <li>• Mini projects every week</li>
-                            <li>• Ideal for Grades 4-10</li>
-                        </ul>
-                        <div class="card-actions justify-end mt-6">
-                            <button class="btn bg-yale-blue-500 hover:bg-yale-blue-600 text-white border-none">Learn More</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Programme Card 2 -->
-                <div class="card bg-white shadow-xl border border-platinum-200">
-                    <div class="card-body">
-                        <h2 class="card-title text-prussian-blue-700">Weekend Program</h2>
-                        <p class="text-platinum-700">
-                            Flexible weekend sessions deepen STEM learning through project-based activities, teamwork, and
-                            innovation challenges.
-                        </p>
-                        <ul class="text-sm text-platinum-600 space-y-1 mt-3">
-                            <li>• Saturday & Sunday batches</li>
-                            <li>• Project showcases every quarter</li>
-                            <li>• Focus on critical thinking</li>
-                        </ul>
-                        <div class="card-actions justify-end mt-6">
-                            <button class="btn bg-yale-blue-500 hover:bg-yale-blue-600 text-white border-none">Learn More</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Programme Card 3 -->
-                <div class="card bg-white shadow-xl border border-platinum-200">
-                    <div class="card-body">
-                        <h2 class="card-title text-prussian-blue-700">Community-Based Program</h2>
-                        <p class="text-platinum-700">
-                            Localized learning initiatives bring STEM education directly to communities, especially in underserved
-                            areas that need access most.
-                        </p>
-                        <ul class="text-sm text-platinum-600 space-y-1 mt-3">
-                            <li>• Pop-up labs & mobile kits</li>
-                            <li>• Parent-community engagement</li>
-                            <li>• Context-aware curriculum</li>
-                        </ul>
-                        <div class="card-actions justify-end mt-6">
-                            <button class="btn bg-yale-blue-500 hover:bg-yale-blue-600 text-white border-none">Learn More</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Programme Card 4 -->
-                <div class="card bg-white shadow-xl border border-platinum-200">
-                    <div class="card-body">
-                        <h2 class="card-title text-prussian-blue-700">Robotics / Coding Club</h2>
-                        <p class="text-platinum-700">
-                            A dynamic club where students collaborate, innovate, and compete while building real-world robotics and
-                            coding projects.
-                        </p>
-                        <ul class="text-sm text-platinum-600 space-y-1 mt-3">
-                            <li>• Seasonal competitions</li>
-                            <li>• Peer mentoring pods</li>
-                            <li>• Access to advanced kits</li>
-                        </ul>
-                        <div class="card-actions justify-end mt-6">
-                            <button class="btn bg-yale-blue-500 hover:bg-yale-blue-600 text-white border-none">Learn More</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Programme Card 5 -->
-                <div class="card bg-white shadow-xl border border-platinum-200">
-                    <div class="card-body">
-                        <h2 class="card-title text-prussian-blue-700">Workshop / Training</h2>
-                        <p class="text-platinum-700">
-                            Short-term, focused workshops on STEM topics such as IoT device building, AI basics, and robotics to
-                            accelerate skills quickly.
-                        </p>
-                        <ul class="text-sm text-platinum-600 space-y-1 mt-3">
-                            <li>• 1-3 day intensives</li>
-                            <li>• Industry expert mentors</li>
-                            <li>• Certification on completion</li>
-                        </ul>
-                        <div class="card-actions justify-end mt-6">
-                            <button class="btn bg-yale-blue-500 hover:bg-yale-blue-600 text-white border-none">Learn More</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Programme Card 6 -->
-                <div class="card bg-white shadow-xl border border-platinum-200">
-                    <div class="card-body">
-                        <h2 class="card-title text-prussian-blue-700">STEM Program</h2>
-                        <p class="text-platinum-700">
-                            A structured curriculum offering comprehensive Science, Technology, Engineering, and Mathematics
-                            education through interactive problem solving.
-                        </p>
-                        <ul class="text-sm text-platinum-600 space-y-1 mt-3">
-                            <li>• Semester-aligned modules</li>
-                            <li>• Real-world design challenges</li>
-                            <li>• Continuous assessment & feedback</li>
-                        </ul>
-                        <div class="card-actions justify-end mt-6">
-                            <button class="btn bg-yale-blue-500 hover:bg-yale-blue-600 text-white border-none">Learn More</button>
-                        </div>
-                    </div>
+
+    <!-- Header Section -->
+    <section class="bg-gradient-to-br from-yale-blue-900 via-prussian-blue-900 to-black py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('/assets/pattern/circuit-board.svg')] opacity-5"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-fresh-sky-300 to-yale-blue-200 mb-6">
+                    Our Moments
+                </h1>
+                <p class="text-xl text-platinum-300 max-w-2xl mx-auto">
+                    Capturing the spirit of innovation, learning, and creativity at Frequency Lab.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid Section -->
+    <section class="py-16 bg-white min-h-screen">
+        <div class="container mx-auto px-4">
+            <!-- Masonry Layout using CSS Columns -->
+            <div id="gallery-grid" class="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+                <!-- Images will be injected here by js/gallery.js -->
+                <div class="animate-pulse flex items-center justify-center p-12 text-platinum-400">
+                    Loading gallery...
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-gradient-to-b from-prussian-blue-900 to-prussian-blue-950 text-platinum-100">
@@ -358,7 +209,6 @@
                             <span class="w-0 group-hover:w-2 h-0.5 bg-yale-blue-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
                             Gallery
                         </a></li>
-
                     </ul>
                 </div>
 
@@ -400,9 +250,6 @@
                     <!-- Additional Links -->
                     <div class="mt-6 pt-6 border-t border-prussian-blue-800">
                         <div class="flex flex-wrap gap-x-4 gap-y-2">
-                            <!-- Blog and Shop links hidden - will be used later -->
-                            <!-- <a href="#/blog" class="text-platinum-400 hover:text-yale-blue-400 transition-colors duration-300 text-sm">Blog</a>
-                            <a href="#/shop" class="text-platinum-400 hover:text-yale-blue-400 transition-colors duration-300 text-sm">Shop</a> -->
                             <a href="#/publications" class="text-platinum-400 hover:text-yale-blue-400 transition-colors duration-300 text-sm">Publications</a>
                         </div>
                     </div>
@@ -426,7 +273,9 @@
             </div>
         </div>
     </footer>
-<script src="../js/main.js"></script>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/gallery.js"></script>
 </body>
 </html>
-

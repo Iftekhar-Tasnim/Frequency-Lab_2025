@@ -96,7 +96,8 @@ function initializeNavigation() {
                 linkRoute = '/publications';
             } else if (linkHref.includes('team')) {
                 linkRoute = '/team';
-
+            } else if (linkHref.includes('gallery')) {
+                linkRoute = '/gallery';
             } else if (linkHref.includes('blog')) {
                 linkRoute = '/blog';
             } else if (linkHref.includes('shop')) {

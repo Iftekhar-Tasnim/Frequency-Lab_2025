@@ -7,9 +7,9 @@
     font-family: 'Inter', sans-serif;
   }
   
-  /* Ensure all headings use Space Grotesk */
+  /* Ensure all headings use Exo 2 */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Exo 2', sans-serif;
   }
   
   /* Ensure body text elements use Inter */
@@ -19,9 +19,9 @@
     font-family: 'Inter', sans-serif;
   }
   
-  /* Navigation and brand text use Space Grotesk for emphasis */
+  /* Navigation and brand text use Exo 2 for emphasis */
   .font-headline {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Exo 2', sans-serif;
   }
 }
 

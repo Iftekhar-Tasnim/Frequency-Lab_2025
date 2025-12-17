@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'sans': ['Inter', 'sans-serif'],
-        'headline': ['Space Grotesk', 'sans-serif'],
+        'headline': ['Exo 2', 'sans-serif'],
         'body': ['Inter', 'sans-serif'],
       },
       colors: {

@@ -13,7 +13,7 @@ F Lab is an educational organization focused on empowering young innovators thro
 - **JavaScript (Vanilla)** - Client-side interactivity and routing
 - **Tailwind CSS v3.4.1** - Utility-first CSS framework
 - **DaisyUI v4.12.10** - Component library built on Tailwind
-- **Google Fonts** - Space Grotesk (headings) & Inter (body/UI)
+- **Google Fonts** - Exo 2 (headings) & Inter (body/UI)
 
 ## ✨ Features
 
@@ -141,8 +141,8 @@ The project includes a custom color palette integrated with Tailwind CSS:
 
 ### Typography
 
-- **Headings**: Exo 2 font family (bold, modern)
-- **Body Text**: Nunito font family (readable, friendly)
+- **Headings**: Exo 2 font family (weights: 300-800, modern geometric sans-serif)
+- **Body Text**: Inter font family (weights: 300-800, highly readable sans-serif)
 
 ## 🔧 Development
 
@@ -203,16 +203,22 @@ The website uses Tailwind's default breakpoints:
 
 ## 📝 License
 
+**PROPRIETARY SOFTWARE** - This project is proprietary and confidential.
+
 Copyright © 2024 Frequency Lab. All rights reserved.
+
+This software is the proprietary property of Frequency Lab. Unauthorized copying, 
+modification, distribution, or use is strictly prohibited without express written 
+permission from Frequency Lab.
+
+See [LICENSE](LICENSE) file for full terms and conditions.
 
 ## 🤝 Contributing
 
 This is a private project for Frequency Lab. For contributions or suggestions, please contact the organization directly.
 
-## 📄 Additional Documentation
+## 📄 Additional Resources
 
-- `SITE_PLAN.md` - Detailed development plan and site structure
-- `SITE_COLORS.md` - Color palette documentation
 - `colorpallet_tailwind.txt` - Color values reference
 
 ---
